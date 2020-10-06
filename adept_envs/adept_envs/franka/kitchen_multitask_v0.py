@@ -21,6 +21,7 @@ from adept_envs import robot_env
 from adept_envs.utils.configurable import configurable
 from gym import spaces
 from dm_control.mujoco import engine
+from IPython import embed
 
 @configurable(pickleable=True)
 class KitchenV0(robot_env.RobotEnv):
@@ -42,7 +43,6 @@ class KitchenV0(robot_env.RobotEnv):
         self.obs_dict = {}
         self.robot_noise_ratio = 0.1  # 10% as per robot_config specs
         self.goal = np.zeros((30,))
-
         super().__init__(
             self.MODEl,
             robot=self.make_robot(

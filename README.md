@@ -2,7 +2,12 @@
 
 This is a set of environments and associated data for use with MuJoCo in a kitchen simulator.
 The code instantiates a kitchen environment and parses associated demonstrations. 
-
+## Install
+Install `mujoco-py` by following the steps mentioned on [here](https://github.com/openai/mujoco-py#install-mujoco)
+remaining dependencies
+```
+pip install -r requirement.txt
+``` 
 ## Getting Started (User)
 
 1. Clone the repository
@@ -11,6 +16,10 @@ $ git clone https://github.com/google-research/relay-policy-learning
 ```
 
 2. Use the environments in your code (After including in the PYTHONPATH)
+for adding to PYTHONPATH
+```
+export PYTHONPATH="${PYTHONPATH}:/home/dhiraj/project/relay-policy-learning/adept_envs"
+```
 ```
 #!/usr/bin/env python3
 
@@ -21,7 +30,9 @@ env = gym.make('kitchen_relax-v1')
 ```
 
 3. To use the demos, first clone the puppet VR repository and add PATH/TO/puppet/vive/source to the PYTHONPATH
-
+```
+export PYTHONPATH="${PYTHONPATH}:/home/dhiraj/project/puppet/vive/source"
+```
 ```
 $ git clone https://github.com/vikashplus/puppet
 ```

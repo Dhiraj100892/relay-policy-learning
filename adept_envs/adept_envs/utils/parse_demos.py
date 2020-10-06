@@ -19,11 +19,12 @@ import glob
 import pickle
 import numpy as np
 from parse_mjl import parse_mjl_logs, viz_parsed_mjl_logs
-from mjrl.utils.gym_env import GymEnv
+#from mjrl.utils.gym_env import GymEnv
 import adept_envs
 import time as timer
 import skvideo.io
 import gym
+from IPython import embed
 
 # headless renderer
 render_buffer = []  # rendering buffer
@@ -165,7 +166,6 @@ def gather_training_data(env, data, filename='demo_playback.mp4', render=None):
 @click.option(
     '--render', '-r', type=str, help='onscreen/offscreen', default='onscreen')
 def main(env, demo_dir, skip, graph, save_logs, view, render):
-
     gym_env = gym.make(env)
     paths = []
     print("Scanning demo_dir: " + demo_dir + "=========")
